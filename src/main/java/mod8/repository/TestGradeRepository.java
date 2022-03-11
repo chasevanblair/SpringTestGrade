@@ -5,6 +5,8 @@
  */
 package mod8.repository;
 import mod8.beans.TestGrade;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository

@@ -5,11 +5,19 @@
  */
 package mod8.beans;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class TestGrade {
+	@Id
+	@GeneratedValue
 	private long id;
 	private int percent;
 	private String studentName;
 	private String testName;
+	private boolean pass;
 	
 	public TestGrade() {
 		super();
@@ -19,6 +27,13 @@ public class TestGrade {
 		this.percent = percent;
 		this.testName = testName;
 		this.studentName = studentName;
+		this.pass = percent > 50;
+	}
+	public TestGrade(String testName, String studentName, int percent, boolean pass) {
+		this.percent = percent;
+		this.testName = testName;
+		this.studentName = studentName;
+		this.pass = pass;
 	}
 	
 	public int getPercent() {
@@ -56,6 +71,14 @@ public class TestGrade {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+	
+	public boolean isPass() {
+		return pass;
+	}
+
+	public void setPass(boolean pass) {
+		this.pass = pass;
 	}
 	
 	
